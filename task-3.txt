@@ -1,0 +1,90 @@
+                                              TASK-3
+CREAT DATABASE USER
+
+CREATE table employee 
+(
+   employee_id int(100) AUTO_INCREMENT PRIMARY key,
+    first_name varchar(100),
+    last_name varchar(100),
+    salary int (100),
+    joining_date varchar(50),
+    department varchar(50)
+
+)
+
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('John','Abraham',1000000,'01-jan-13  12.00 am','Banking');
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('Michael','Clarke',800000,'01-jan-13  12.00 am','Insurance');
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('Roy','Thomas',700000,'01-feb-13  12.00 am','Banking');
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('Tom','Jose',600000,'01-feb-13  12.00 am','Insurance');
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('Jerry','Pinto',650000,'01-feb-13  12.00 am','Insurance');
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('Philip','Mathew',750000,'01-jan-13  12.00 am','Services');
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('TestName1','123',650000,'01-jan-13  12.00 am','Services');
+insert into employee (first_name,last_name,salary,joining_date,department) VALUES('TestName2','Lname%',600000,'01-feb-13  12.00 am','Insurance')
+
+
+
+
+
+     CREATE TABLE Incentive
+(
+   Employee_id int(50),
+    Incentive_date varchar (100),
+    incentive_amount int (100),
+    
+    FOREIGN KEY (Employee_id) REFERENCES employee (employee_id)
+
+
+
+)
+
+       
+      INSERT into incentive(Employee_id,Incentive_date,incentive_amount) VALUES (1,'01-feb-13',5000);
+     INSERT into incentive(Employee_id,Incentive_date,incentive_amount) VALUES (2,'01-feb-13',3000);
+     INSERT into incentive(Employee_id,Incentive_date,incentive_amount) VALUES (3,'01-feb-13',4000);
+     INSERT into incentive(Employee_id,Incentive_date,incentive_amount) VALUES (1,'01-jan-13',4500);
+     INSERT into incentive(Employee_id,Incentive_date,incentive_amount) VALUES (2,'01-jan-13',3500)
+
+
+
+
+     a) SELECT first_name FROM `employee` 
+
+     b) SELECT first_name,joining_date,salary FROM `employee` 
+
+     c) SELECT first_name,salary FROM `employee` ORDER BY first_name,salary DESC
+
+     d) SELECT first_name FROM `employee` WHERE first_name LIKE'J%'
+
+     e) SELECT department,salary FROM `employee` ORDER BY salary ASC
+
+     f) SELECT first_name,incentive_amount FROM `employee` JOIN incentive ON employee.employee_id=incentive.Employee_id WHERE incentive_amount >3000 
+
+
+
+    CREATE TABLE view_table
+(
+   t_id int (100) AUTO_INCREMENT PRIMARY KEY,
+    t_first_name varchar (100),
+    t_last_name varchar(100),
+    t_salary int (100),
+    t_joining_date varchar (100),
+    t_department varchar(50),
+    t_time timestamp,
+    t_action varchar(50)
+
+)
+
+
+     g)
+                DELIMITER $$
+             CREATE TRIGGER user_trigger AFTER INSERT on employee for EACH ROW
+ 
+        BEGIN
+        INSERT INTO view_table (t_first_name,t_last_name,t_salary,t_joining_date,t_department,t_action) 
+       VALUES(new.first_name,new.last_name,new.salary,new.joining_date,new.department,'Record insreted...!');
+ 
+ 
+ 
+ 
+ END $$
+

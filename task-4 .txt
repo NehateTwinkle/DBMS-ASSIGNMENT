@@ -1,0 +1,51 @@
+                              TASK-4
+    
+       CREATE DATABASE user
+
+
+     CREATE TABLE salsperson
+(
+     SNo int (50) AUTO_INCREMENT PRIMARY KEY,
+    SNAME varchar(100),
+    CITY varchar(50),
+    COMM varchar (100)
+  )
+
+
+   INSERT INTO salsperson (SNo,SNAME,CITY,COMM) VALUES ( 1001,'Peel','London','0.12'); 
+INSERT INTO salsperson (SNo,SNAME,CITY,COMM) VALUES ( 1002,'Serres','San Jose','0.13'); 
+INSERT INTO salsperson (SNo,SNAME,CITY,COMM) VALUES ( 1004,'Motika','London','0.11'); 
+INSERT INTO salsperson (SNo,SNAME,CITY,COMM) VALUES ( 1007,'Rafkin','Barcelona','0.15'); 
+INSERT INTO salsperson (SNo,SNAME,CITY,COMM) VALUES ( 1003,'Axelrod','New York','0.1')
+
+
+
+Create TABLE Customer
+(
+    CMM int(100) PRIMARY KEY,
+    Cname varchar(100),
+    City varchar (100),
+    Rating int (100),
+    Sno int (100),
+    FOREIGN KEY (Sno) REFERENCES salesperson (SNo)
+);
+
+INSERT INTO Customer (CMM,Cname,City,Rating,Sno) VALUES ('201','Hoffman','London','100','1001');
+INSERT INTO Customer (CMM,Cname,City,Rating,Sno) VALUES ('202','Giovanne','Rome','200','1003');
+INSERT INTO Customer (CMM,Cname,City,Rating,Sno) VALUES ('203','Liu','San Jose','300','1002');
+INSERT INTO Customer (CMM,Cname,City,Rating,Sno) VALUES ('204','Grass','Barcelona','100','1002');
+INSERT INTO Customer (CMM,Cname,City,Rating,Sno) VALUES ('206','Clemens','London','300','1007');
+INSERT INTO Customer (CMM,Cname,City,Rating,Sno) VALUES ('207','Pereira','Rome','100','1004')
+
+
+
+  a>  SELECT Sname, City FROM salesperson WHERE City='London' AND Comm >0.12;
+
+  
+  b>    SELECT * FROM `salesperson` WHERE city='Barcelona' or city= 'London' ;
+
+  
+  c>   SELECT * FROM `salesperson` WHERE Comm>0.1 AND Comm < 0.12;
+
+  
+  d>   SELECT * FROM `customer` WHERE NOT Rating=100 OR City='Rome';

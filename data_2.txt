@@ -1,0 +1,24 @@
+                 task-2
+
+creat database cartoon
+
+
+CREATE table person
+(
+   first_name varchar(100),
+    last_name varchar(10),
+    address varchar(100),
+    city varchar (20),
+    age int (10)
+
+
+)
+    
+insert into person(first_name,last_name,address,city,age)VALUES ('Micky','Mouse','123 fantasy way','anaheim',73);
+insert into person(first_name,last_name,address,city,age)VALUES ('Bat','Man','321 Cavern Ave','Gotham',54);
+insert into person(first_name,last_name,address,city,age)VALUES ('Wonder','Woman','987 Truth Way','Paradise',39);
+insert into person(first_name,last_name,address,city,age)VALUES ('Donald','Duck','555 Quack Street','Mallard',65);
+insert into person(first_name,last_name,address,city,age)VALUES ('Bugs','Bunny','567 Carrot Street','Rascal',58);
+insert into person(first_name,last_name,address,city,age)VALUES ('Wiley','Coyote','999 Acme Way','Canyon',61);
+insert into person(first_name,last_name,address,city,age)VALUES ('Cat','Woman','234 Purrfect Street','Hairball',32);
+insert into person(first_name,last_name,address,city,age)VALUES ('Tweety','Bird','543','Itotltaw',28)

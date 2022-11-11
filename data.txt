@@ -1,0 +1,33 @@
+                          TASK-1
+   creat database school
+
+   
+   CREATE TABLE student
+
+(   roll_no int(100) AUTO_INCREMENT PRIMARY KEY,
+     name varchar(100),
+    branch varchar(50)
+)
+
+INSERT into student(roll_no,name,branch)VALUES(1,'jay','computer science');
+INSERT into student(roll_no,name,branch)VALUES(2,'suhani','electronic comm');
+INSERT into student(roll_no,name,branch)VALUES(3,'kriti','electronic comm')
+
+
+
+CREATE TABLE exam
+(
+    Roll_no int (50),
+    s_code varchar(100),
+    marks int(100),
+    p_code varchar(100),
+ 
+    FOREIGN KEY (Roll_no) REFERENCES student(roll_no)
+
+)
+INSERT into exam(Roll_no,s_code,marks,p_code)VALUES(1,'cs11',50,'cs');
+INSERT into exam(Roll_no,s_code,marks,p_code)VALUES(1,'cs12',60,'cs');
+INSERT into exam(Roll_no,s_code,marks,p_code)VALUES(2,'ec101',66,'ec');
+INSERT into exam(Roll_no,s_code,marks,p_code)VALUES(2,'ec102',70,'ec');
+INSERT into exam(Roll_no,s_code,marks,p_code)VALUES(3,'ec101',45,'ec');
+INSERT into exam(Roll_no,s_code,marks,p_code)VALUES(3,'ec102',50,'ec')
